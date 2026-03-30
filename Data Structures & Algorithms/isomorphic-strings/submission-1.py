@@ -1,0 +1,15 @@
+class Solution:
+    def isIsomorphic(self, s: str, t: str) -> bool:
+        ismorphicMap = {}
+
+        for i in range(len(s)):
+            if s[i] in ismorphicMap:
+                if ismorphicMap[s[i]] != t[i]:
+                    return False
+            else:
+                if t[i] not in ismorphicMap.values():
+                    ismorphicMap[s[i]] = t[i]
+                else:
+                    return False
+            print(ismorphicMap)
+        return True
